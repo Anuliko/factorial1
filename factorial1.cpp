@@ -1,20 +1,15 @@
-
 #include <iostream>
-
-int main() 
+unsigned long long factorial(unsigned n)
 {
-  int fact = 1;
-  unsigned long long int N{};
-  std::cin >> N;
-  
-  if (N == 0 || N == 1)
-  fact = 1;
-  
+  if (n <= 1)
+  return 1;
   else
-  for (int i = 1; i < N; ++i)
-  {
-    fact = fact * (i+1);
-  }
-
+  return n * factorial (n-1);
+}
+int main()
+{
+  unsigned n = 0;
+  std::cin >> n;
+  unsigned long long fact = factorial(n);
   std::cout << fact;
 }
